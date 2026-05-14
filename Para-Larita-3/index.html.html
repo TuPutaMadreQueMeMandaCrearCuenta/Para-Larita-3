@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Lara</title>
+
+<style>
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd6e7,#ffeccf);
+    font-family:Arial,sans-serif;
+    overflow:auto;
+
+}
+
+.card{
+    background:white;
+    width:85%;
+    max-width:700px;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    text-align:center;
+    animation:aparecer 1s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    color:#ff4d88;
+    font-size:40px;
+}
+
+p{
+    font-size:22px;
+    color:#444;
+    line-height:1.6;
+}
+
+button{
+    border:none;
+    padding:14px 22px;
+    margin:10px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:17px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.btn1{
+    background:#ff7aa2;
+    color:white;
+}
+
+.btn2{
+    background:#ffd166;
+}
+
+#respuesta{
+    margin-top:25px;
+    animation:aparecer 0.5s ease;
+}
+
+.opcionesFinales{
+    margin-top:25px;
+}
+
+.nah{
+    background:#bdbdbd;
+    color:white;
+}
+
+.ens{
+    background:#8ecae6;
+    color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Para Lara:</h1>
+
+<div id="contenidoPrincipal">
+
+<p>¿Sabías que no es bueno achicopalarse?</p>
+
+<button class="btn1" onclick="respuestaHostil()">
+¿Enserio?, que va...
+</button>
+
+<button class="btn2" onclick="respuestaReal()">
+¿Porque?
+</button>
+
+<div id="respuesta"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function respuestaHostil(){
+
+document.getElementById("respuesta").innerHTML = `
+<p>
+Ey, que forma tan hostil e irónica de responder Larita 😔,
+nonono, que tal si pruebas la otra opción.
+</p>
+`;
+
+}
+
+function respuestaReal(){
+
+document.getElementById("contenidoPrincipal").innerHTML = `
+
+<p>
+¡Porque yo lo digo!, Jajsjajs (ok, es mentira) <br><br>
+
+En realidad es porque eres alguien que no merece sufrir por las demás personas,
+o acaso dime... ¿Alguien haría eso por vos? <br><br>
+
+La verdad es que hay gente que no te merece,
+pero, por sobre ello, debes <b>SOBREPONERTE VOS</b>. <br><br>
+
+¿Acaso no ves lo grandiosa que sos? 🌸
+</p>
+
+<div class="opcionesFinales">
+
+<button class="nah" onclick="nah()">
+Nah
+</button>
+
+<button class="ens" onclick="enserio()">
+...¿Enserio?
+</button>
+
+</div>
+
+<div id="final"></div>
+
+`;
+
+}
+
+let contadorNah = 0;
+
+function nah(){
+
+contadorNah++;
+
+if(contadorNah == 1){
+
+document.getElementById("final").innerHTML = `
+<p>
+Si vuelves a escoger esta opción te juro que te reprendo 😤
+</p>
+`;
+
+}
+
+else{
+
+document.getElementById("final").innerHTML = `
+<p>
+Te lo advertí, así que... <br><br>
+
+<b>¿ACASO SOS ESTÚPIDA?</b> <br><br>
+
+DALE CLICK A LA OTRA OPCIÓN.
+</p>
+`;
+
+}
+
+}
+
+function enserio(){
+
+document.getElementById("final").innerHTML = `
+<p>
+
+¿De verdad me estás preguntando eso?... <br><br>
+
+Yo te amo con el alma, y ya muy fuera de juego,
+no me gusta que sufras por boludeces,
+siento que debes aceptar ciertas cosillas
+que podemos hablar el día que gustes... <br><br>
+
+...con respecto a Nacho por ejemplo,
+pero esta página no es para darte un sermón jajaja,
+sino para divertirte un rato y que no pensés mucho
+en cosas que simplemente no van. <br><br>
+
+Yo estoy seguro que hay gente que conoces
+y ha de valer mucho la pena,
+enfócate en eso :3 🌸
+
+</p>
+
+<br>
+
+<button onclick="siguiente()" class="btn1">Siguiente</button>
+
+`;
+}
+
+function siguiente(){
+
+document.getElementById("contenidoPrincipal").innerHTML = `
+<div style="animation: aparecer 0.8s ease;">
+
+<p>
+Sé que es una página muy boba y algo corta, pero quería hacer algo un potito especial para vos, espero te arregle un poco el ánimo, te quiero muchísimo UwU
+</p>
+
+</div>
+`;
+}
+
+</script>
+
+</body>
+</html>
